@@ -1,9 +1,15 @@
+const localeCompareBaseArguments = [['ru', 'en'], { caseFirst: 'upper' }];
+
 /**
  * sortStrings - sorts array of string by two criteria "asc" or "desc"
  * @param {string[]} arr - the array of strings
  * @param {string} [param="asc"] param - the sorting type "asc" or "desc"
  * @returns {string[]}
  */
-export function sortStrings(arr, param = 'asc') {
-
+export function sortStrings([...arr], param = 'asc') {
+  return arr.sort((a, b) => {
+    return param === 'asc'
+      ? a.localeCompare(b, ...localeCompareBaseArguments)
+      : b.localeCompare(a, ...localeCompareBaseArguments);
+  });
 }
