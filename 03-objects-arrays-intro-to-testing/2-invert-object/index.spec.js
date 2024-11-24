@@ -4,7 +4,7 @@ describe('objects-arrays-intro-to-testing/invert-object', () => {
   it('should swap keys and values and return new object', () => {
     const obj = {
       key1: 'value1',
-      key2: 'value2'
+      key2: 'value2',
     };
 
     const expected = {
